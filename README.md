@@ -27,4 +27,4 @@ Spinning up a postgres container can be done by running `docker-compose up -d` i
   - Useful for if the master project needs to change some env variables or work within a specific docker network.
 
 2 is the preferable option if wanting to run all BTD microservices locally.
-
+It is also the only option that is configured with a docker network that can be used to link together all microservices locally.
