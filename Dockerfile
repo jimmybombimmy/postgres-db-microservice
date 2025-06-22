@@ -4,8 +4,11 @@ WORKDIR /var/liv/postgresql
 
 COPY . .
 
-COPY setup.sql /docker-entrypoint-initdb.d/setup.sql
-RUN bash -c "psql -U btd-local -a -f setup.sql"
+ENV POSTGRES_USER=user
+ENV POSTGRES_PASSWORD=pass
+ENV POSTGRES_DB=postgres
+
+COPY ./setup.sql /docker-entrypoint-initdb.d/setup.sql
 
 EXPOSE 5432
 
